@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=CyberMind
+Comment=A hacker-aesthetic mindmap application
+Exec=python3 -m cybermind
+Icon=applications-graphics
+Terminal=false
+Type=Application
+Categories=Office;Graphics;
+Keywords=mindmap;mind;map;brainstorm;diagram;security;
+StartupNotify=true

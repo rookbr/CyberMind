@@ -1,0 +1,703 @@
+/* CyberMind - Terminal Operator Theme */
+/* Dark cyberpunk/hacker aesthetic with red accents */
+
+/* ==================== Color Variables ==================== */
+@define-color bg_primary #0a0a0a;
+@define-color bg_secondary #141414;
+@define-color bg_tertiary #1a1a1a;
+@define-color surface #1e1e1e;
+@define-color surface_hover #252525;
+@define-color border_subtle #2a2a2a;
+@define-color border_active #ff2d2d;
+@define-color text_primary #e0e0e0;
+@define-color text_secondary #888888;
+@define-color text_muted #555555;
+@define-color accent_primary #ff2d2d;
+@define-color accent_hover #ff4444;
+@define-color accent_secondary #cc0000;
+@define-color success #00ff41;
+@define-color warning #ffaa00;
+@define-color error #ff2d2d;
+
+/* ==================== Global Styles ==================== */
+window {
+    background-color: @bg_primary;
+    color: @text_primary;
+}
+
+* {
+    font-family: "JetBrains Mono", "Fira Code", "Source Code Pro", "Consolas", monospace;
+    outline: none;
+}
+
+/* ==================== Header Bar ==================== */
+headerbar {
+    background: @bg_secondary;
+    border-bottom: 1px solid @border_subtle;
+    min-height: 40px;
+    padding: 0 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+headerbar title {
+    font-family: "Share Tech Mono", "Orbitron", "Rajdhani", monospace;
+    font-weight: 600;
+    font-size: 14px;
+    color: @text_primary;
+    letter-spacing: 1px;
+}
+
+/* CyberMind Logo - Neon Red Glow Effect */
+.cybermind-logo {
+    font-family: "Share Tech Mono", "Orbitron", "VT323", "Press Start 2P", monospace;
+    font-weight: 700;
+    font-size: 20px;
+    color: #ff2d2d;
+    letter-spacing: 3px;
+    text-shadow: 
+        0 0 5px #ff2d2d,
+        0 0 10px #ff2d2d,
+        0 0 20px #ff2d2d,
+        0 0 40px #cc0000,
+        0 0 80px #cc0000;
+}
+
+headerbar button {
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: @text_secondary;
+    min-height: 28px;
+    min-width: 28px;
+    padding: 4px 8px;
+    transition: all 150ms ease;
+}
+
+headerbar button:hover {
+    background: @surface;
+    border-color: @border_subtle;
+    color: @text_primary;
+}
+
+headerbar button:active,
+headerbar button:checked {
+    background: @surface_hover;
+    border-color: @accent_primary;
+    color: @accent_primary;
+}
+
+/* ==================== Sidebar ==================== */
+.sidebar {
+    background: @bg_secondary;
+    border-right: 1px solid @border_subtle;
+}
+
+.sidebar-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid @border_subtle;
+}
+
+.sidebar-header label {
+    font-family: "Share Tech Mono", monospace;
+    font-size: 11px;
+    font-weight: 600;
+    color: @accent_primary;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.map-list {
+    background: transparent;
+}
+
+.map-list row {
+    padding: 8px 16px;
+    border-bottom: 1px solid @border_subtle;
+    transition: all 150ms ease;
+}
+
+.map-list row:hover {
+    background: @surface;
+}
+
+.map-list row:selected {
+    background: @surface_hover;
+    border-left: 3px solid @accent_primary;
+}
+
+.map-list row label {
+    color: @text_primary;
+}
+
+.map-list row .map-date {
+    font-size: 10px;
+    color: @text_muted;
+}
+
+/* ==================== Notes Panel ==================== */
+.notes-panel {
+    background: @bg_secondary;
+    border-left: 1px solid @border_subtle;
+}
+
+.notes-panel-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid @border_subtle;
+    background: @bg_tertiary;
+}
+
+.notes-panel-header label {
+    font-family: "Share Tech Mono", monospace;
+    font-size: 11px;
+    font-weight: 600;
+    color: @accent_primary;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.notes-editor {
+    background: @bg_primary;
+    color: @text_primary;
+    padding: 16px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.notes-editor text {
+    background: transparent;
+    color: @text_primary;
+}
+
+/* ==================== Canvas ==================== */
+.canvas-container {
+    background: @bg_primary;
+}
+
+.canvas {
+    background: @bg_primary;
+}
+
+/* Canvas grid pattern is drawn programmatically */
+
+/* ==================== Minimap ==================== */
+.minimap {
+    background: @bg_secondary;
+    border: 1px solid @border_subtle;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.minimap-viewport {
+    border: 1px solid @accent_primary;
+    background: rgba(255, 45, 45, 0.1);
+}
+
+/* ==================== Search ==================== */
+.search-bar {
+    background: @surface;
+    border: 1px solid @border_subtle;
+    border-radius: 4px;
+    padding: 4px 12px;
+    margin: 8px;
+}
+
+.search-bar:focus-within {
+    border-color: @accent_primary;
+    box-shadow: 0 0 8px rgba(255, 45, 45, 0.2);
+}
+
+.search-bar entry {
+    background: transparent;
+    border: none;
+    color: @text_primary;
+    min-height: 28px;
+}
+
+.search-bar entry placeholder {
+    color: @text_muted;
+}
+
+.search-results {
+    background: @bg_secondary;
+    border: 1px solid @border_subtle;
+    border-radius: 4px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.search-results row {
+    padding: 8px 12px;
+    border-bottom: 1px solid @border_subtle;
+}
+
+.search-results row:hover {
+    background: @surface;
+}
+
+.search-results row:selected {
+    background: @surface_hover;
+    border-left: 3px solid @accent_primary;
+}
+
+/* ==================== Dialogs ==================== */
+dialog {
+    background: @bg_secondary;
+    border: 1px solid @border_subtle;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+}
+
+dialog headerbar {
+    border-radius: 8px 8px 0 0;
+}
+
+dialog .dialog-content {
+    padding: 24px;
+}
+
+/* ==================== Buttons ==================== */
+button {
+    background: @surface;
+    border: 1px solid @border_subtle;
+    border-radius: 4px;
+    color: @text_primary;
+    padding: 8px 16px;
+    font-weight: 500;
+    transition: all 150ms ease;
+}
+
+button:hover {
+    background: @surface_hover;
+    border-color: @text_muted;
+}
+
+button:active {
+    background: @bg_tertiary;
+}
+
+button.suggested-action {
+    background: @accent_primary;
+    border-color: @accent_primary;
+    color: @bg_primary;
+}
+
+button.suggested-action:hover {
+    background: @accent_hover;
+    border-color: @accent_hover;
+}
+
+button.destructive-action {
+    background: transparent;
+    border-color: @error;
+    color: @error;
+}
+
+button.destructive-action:hover {
+    background: rgba(255, 45, 45, 0.1);
+}
+
+button.flat {
+    background: transparent;
+    border-color: transparent;
+}
+
+button.flat:hover {
+    background: @surface;
+}
+
+/* ==================== Entry / Text Input ==================== */
+entry {
+    background: @surface;
+    border: 1px solid @border_subtle;
+    border-radius: 4px;
+    color: @text_primary;
+    padding: 8px 12px;
+    min-height: 32px;
+    transition: all 150ms ease;
+}
+
+entry:focus {
+    border-color: @accent_primary;
+    box-shadow: 0 0 8px rgba(255, 45, 45, 0.2);
+}
+
+entry placeholder {
+    color: @text_muted;
+}
+
+/* ==================== Text View ==================== */
+textview {
+    background: @bg_primary;
+    color: @text_primary;
+}
+
+textview text {
+    background: transparent;
+    color: @text_primary;
+}
+
+textview text selection {
+    background: rgba(255, 45, 45, 0.3);
+    color: @text_primary;
+}
+
+/* ==================== Scrollbar ==================== */
+scrollbar {
+    background: transparent;
+}
+
+scrollbar slider {
+    background: @border_subtle;
+    border-radius: 4px;
+    min-width: 8px;
+    min-height: 8px;
+}
+
+scrollbar slider:hover {
+    background: @text_muted;
+}
+
+scrollbar slider:active {
+    background: @accent_primary;
+}
+
+scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider {
+    background: @border_subtle;
+}
+
+/* ==================== Popover / Menu ==================== */
+popover {
+    background: @bg_secondary;
+    border: 1px solid @border_subtle;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+popover contents {
+    padding: 8px;
+}
+
+popover modelbutton {
+    padding: 8px 12px;
+    border-radius: 4px;
+    color: @text_primary;
+}
+
+popover modelbutton:hover {
+    background: @surface;
+}
+
+popover separator {
+    background: @border_subtle;
+    margin: 4px 0;
+}
+
+/* ==================== Context Menu ==================== */
+menu {
+    background: @bg_secondary;
+    border: 1px solid @border_subtle;
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+menuitem {
+    padding: 8px 12px;
+    border-radius: 4px;
+    color: @text_primary;
+}
+
+menuitem:hover {
+    background: @surface;
+}
+
+menuitem accelerator {
+    color: @text_muted;
+    font-size: 11px;
+}
+
+/* ==================== Tooltips ==================== */
+tooltip {
+    background: @bg_tertiary;
+    border: 1px solid @border_subtle;
+    border-radius: 4px;
+    color: @text_primary;
+    padding: 6px 10px;
+    font-size: 12px;
+}
+
+/* ==================== Spinner ==================== */
+spinner {
+    color: @accent_primary;
+}
+
+/* ==================== Progress Bar ==================== */
+progressbar trough {
+    background: @border_subtle;
+    border-radius: 2px;
+}
+
+progressbar progress {
+    background: @accent_primary;
+    border-radius: 2px;
+}
+
+/* ==================== Switch ==================== */
+switch {
+    background: @border_subtle;
+    border-radius: 12px;
+    min-width: 48px;
+    min-height: 24px;
+}
+
+switch:checked {
+    background: @accent_primary;
+}
+
+switch slider {
+    background: @text_primary;
+    border-radius: 10px;
+    min-width: 20px;
+    min-height: 20px;
+    margin: 2px;
+}
+
+/* ==================== Scale / Slider ==================== */
+scale trough {
+    background: @border_subtle;
+    border-radius: 2px;
+    min-height: 4px;
+}
+
+scale highlight {
+    background: @accent_primary;
+    border-radius: 2px;
+}
+
+scale slider {
+    background: @text_primary;
+    border-radius: 50%;
+    min-width: 16px;
+    min-height: 16px;
+}
+
+scale slider:hover {
+    background: @accent_primary;
+}
+
+/* ==================== Separator ==================== */
+separator {
+    background: @border_subtle;
+    min-width: 1px;
+    min-height: 1px;
+}
+
+/* ==================== Status Indicators ==================== */
+.status-critical {
+    color: @error;
+}
+
+.status-high {
+    color: @warning;
+}
+
+.status-medium {
+    color: #ff8800;
+}
+
+.status-low {
+    color: @success;
+}
+
+.status-info {
+    color: #4da6ff;
+}
+
+.priority-badge {
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.priority-critical {
+    background: rgba(255, 45, 45, 0.2);
+    color: @error;
+    border: 1px solid @error;
+}
+
+.priority-high {
+    background: rgba(255, 170, 0, 0.2);
+    color: @warning;
+    border: 1px solid @warning;
+}
+
+.priority-medium {
+    background: rgba(255, 136, 0, 0.2);
+    color: #ff8800;
+    border: 1px solid #ff8800;
+}
+
+.priority-low {
+    background: rgba(0, 255, 65, 0.2);
+    color: @success;
+    border: 1px solid @success;
+}
+
+.priority-info {
+    background: rgba(77, 166, 255, 0.2);
+    color: #4da6ff;
+    border: 1px solid #4da6ff;
+}
+
+/* ==================== Node Styles (for reference in canvas drawing) ==================== */
+/*
+ * Node colors and styles are primarily handled in Python/Cairo,
+ * but these classes can be used for GTK widgets within nodes
+ */
+
+.node-text {
+    color: @text_primary;
+    font-size: 13px;
+}
+
+.node-root {
+    font-size: 16px;
+    font-weight: 600;
+    color: @text_primary;
+}
+
+.node-selected {
+    /* Applied via Cairo with glow effect */
+}
+
+/* ==================== Empty State ==================== */
+.empty-state {
+    color: @text_muted;
+}
+
+.empty-state-icon {
+    font-size: 48px;
+    color: @border_subtle;
+    margin-bottom: 16px;
+}
+
+.empty-state-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: @text_secondary;
+    margin-bottom: 8px;
+}
+
+.empty-state-description {
+    font-size: 13px;
+    color: @text_muted;
+}
+
+/* ==================== Keyboard Shortcuts Dialog ==================== */
+.shortcuts-section {
+    margin-bottom: 24px;
+}
+
+.shortcuts-section-title {
+    font-family: "Share Tech Mono", monospace;
+    font-size: 12px;
+    font-weight: 600;
+    color: @accent_primary;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.shortcut-row {
+    padding: 6px 0;
+}
+
+.shortcut-action {
+    color: @text_primary;
+    font-size: 13px;
+}
+
+.shortcut-keys {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    background: @surface;
+    border: 1px solid @border_subtle;
+    border-radius: 3px;
+    padding: 2px 6px;
+    color: @text_secondary;
+}
+
+/* ==================== Settings ==================== */
+.settings-group {
+    background: @bg_tertiary;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.settings-group-title {
+    font-family: "Share Tech Mono", monospace;
+    font-size: 11px;
+    font-weight: 600;
+    color: @accent_primary;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.settings-row {
+    padding: 8px 0;
+}
+
+.settings-label {
+    color: @text_primary;
+    font-size: 13px;
+}
+
+.settings-description {
+    color: @text_muted;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+/* ==================== Animation Classes ==================== */
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 45, 45, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(255, 45, 45, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(255, 45, 45, 0.3);
+    }
+}
+
+.glow-animation {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* ==================== Focus Indicators ==================== */
+/* Disable focus outline globally - app is keyboard-driven via canvas */
+*:focus-visible {
+    outline: none;
+    outline-offset: 0;
+}
+
+*:focus {
+    outline: none;
+}
+
+/* Only show focus on entry fields when typing */
+entry:focus-visible {
+    border-color: @accent_primary;
+    outline: none;
+}
+
+/* ==================== Selection ==================== */
+selection {
+    background: rgba(255, 45, 45, 0.3);
+    color: @text_primary;
+}
