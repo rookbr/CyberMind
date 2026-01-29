@@ -36,7 +36,7 @@ The installation script installs CyberMind to `/opt/cybermind` with full desktop
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/CyberMind.git
+git clone https://github.com/rookbr/CyberMind.git
 cd CyberMind
 
 # Run the installer (requires sudo)
