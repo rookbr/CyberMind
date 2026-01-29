@@ -2,7 +2,7 @@
 
 A hacker-aesthetic mindmap application for Linux (Wayland/GNOME).
 
-![CyberMind](cybermind_horizontal.png)
+![CyberMind](cybermind_horizontal.png?raw=true)
 
 ## Features
 
